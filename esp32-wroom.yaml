@@ -71,7 +71,7 @@ i2c:
 
 display:
   - platform: lcd_pcf8574
-    id: lcd_display
+    address: 0x3F
     address: 0x3Fx27
     dimensions: 20x4
     lambda: |-
