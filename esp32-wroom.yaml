@@ -55,12 +55,8 @@ text:
     name: "LCD Text"
     id: lcd_text
     mode: TEXT
-    optimistic: true
-    initial_value: "Hello from ESP!"
-    update_interval: 5s
-    lambda: |-
-      if (x.empty()) return {""};
-      return x;
+    restore_value: yes
+    initial_value: "Hello from ESP!" 
 
 # LCD 2004A character display
 display:
