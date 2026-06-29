@@ -48,28 +48,6 @@ output:
     id: led_output
     inverted: true
 
-
-# I2C bus for LCD
-i2c:
-  sda: GPIO21
-  scl: GPIO22
-  scan: true
-
-# LCD 2004A 20x4 character display with I2C interface
-font:
-  - file: "Courier New"
-    id: my_font
-    size: 12
-
-display:
-  - platform: lcd_pcf8574
-    id: lcd_display
-    address: 0x27
-    dimensions: 20x4
-    lambda: |-
-      it.print(0, 0, id(my_font), "Hello, ESP32!");
-      it.print(0, 1, id(my_font), "LCD 2004A Ready");
-
 switch:
   - platform: template
     name: "Onboard LED"
