@@ -54,6 +54,7 @@ text:
   - platform: template
     name: "LCD Text"
     id: lcd_text
+    mode: TEXT
     optimistic: true
     initial_value: "Hello from ESP!"
     update_interval: 5s
