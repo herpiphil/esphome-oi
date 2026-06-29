@@ -63,6 +63,12 @@ text:
             id(lcd_text).publish_state(x);
 
 # LCD 2004A character display
+# I2C bus for LCD display
+i2c:
+  sda: GPIO21
+  scl: GPIO22
+  scan: true
+
 display:
   - platform: lcd_pcf8574
     id: lcd_display
