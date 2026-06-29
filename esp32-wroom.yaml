@@ -48,6 +48,28 @@ output:
     id: led_output
     inverted: true
 
+
+# Text entity controllable from Home Assistant
+text:
+  - platform: template
+    name: "LCD Text"
+    id: lcd_text
+    optimistic: true
+    initial_value: "Hello from ESP!"
+    update_interval: 5s
+    lambda: |-
+      if (x.empty()) return {""};
+      return x;
+
+# LCD 2004A character display
+display:
+  - platform: lcd_pcf8574
+    id: lcd_display
+    address: 0x27
+    dimensions: 20x4
+    lambda: |-
+      it.print(0, 0, "Text: ");
+      it.print(6, 0, id(lcd_text).state.c_str());
 switch:
   - platform: template
     name: "Onboard LED"
